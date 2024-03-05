@@ -1,15 +1,15 @@
 // add whatever parameters you deem necessary
 function countPairs(arr, target) {
   const count = {};
-  const res = new Set();
+  let res = 0;
 
   for (let i = 0; i < arr.length; i++) {
     if (target - arr[i] in count) {
-      res.add([arr[i], target - arr[i]]);
+      res++;
     }
     count[arr[i]] = i;
   }
-  return res.size;
+  return res;
 }
 
 module.exports = countPairs;

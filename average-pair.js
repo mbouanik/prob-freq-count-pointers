@@ -12,7 +12,6 @@ function averagePair(arr, target) {
     }
     i++;
   }
-  console.log(count);
   return false;
 }
 module.exports = averagePair;
