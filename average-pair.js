@@ -1,9 +1,18 @@
 // add whatever parameters you deem necessary
 function averagePair(arr, target) {
-  const len = arr.length;
-  const initialVal = 0;
-  const res = arr.reduce((previous, current) => previous + current, initialVal);
-  console.log(res);
-  return res / arr.length == target ? true : false;
+  const count = {};
+  let i = 0;
+  const t = target * 2;
+  while (i < arr.length) {
+    if (t - arr[i] in count) {
+      return true;
+    }
+    if (!count[arr[i]]) {
+      count[arr[i]] = i;
+    }
+    i++;
+  }
+  console.log(count);
+  return false;
 }
 module.exports = averagePair;
